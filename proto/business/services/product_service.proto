@@ -1,0 +1,20 @@
+syntax ="proto3";
+
+package proto.services;
+option go_package = "genproto/go/services;service";
+
+
+service ProductService {
+    rpc Add(ProductServiceAddRequest) returns (ProductServiceAddResponse) {};
+}
+
+message ProductServiceAddRequest {
+    string id = 1;
+    string name = 2;
+    string price = 3;
+}
+
+message ProductServiceAddResponse {
+    bool status = 1;
+    string message = 2;
+}

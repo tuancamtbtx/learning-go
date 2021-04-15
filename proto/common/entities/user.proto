@@ -1,0 +1,11 @@
+syntax= "proto3";
+
+package proto.entities;
+
+option go_package = "genproto/go/common/entities";
+
+message User {
+    string name = 1;
+    uint32 age = 2;
+    string location = 3;
+}

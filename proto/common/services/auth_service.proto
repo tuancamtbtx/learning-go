@@ -1,0 +1,20 @@
+syntax ="proto3";
+
+package proto.services;
+import "proto/entities/user.proto";
+option go_package = "genproto/go/common/services";
+
+
+service AuthService {
+    rpc GetMe (AuthServiceGetMeRequest) returns (AuthServiceGetMeResponse) {};
+}
+
+message AuthServiceGetMeRequest {
+    string token = 1;
+}
+
+message AuthServiceGetMeResponse {
+    bool status = 1;
+    string message = 2;
+    proto.entities.User data = 3;
+}
