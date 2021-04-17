@@ -7,10 +7,9 @@ import (
 	"net"
 
 	service "github.com/tuancamtbtx/learning-go/genproto/go/common/services"
-
 	product_service "github.com/tuancamtbtx/learning-go/genproto/go/services"
-	grpc_handler "github.com/tuancamtbtx/learning-go/handlers/grpc"
 
+	grpc_handler "github.com/tuancamtbtx/learning-go/handlers/grpc"
 	"google.golang.org/grpc"
 )
 
@@ -27,4 +26,24 @@ func main() {
 	product_service.RegisterProductServiceServer(srv, grpc_handler.NewProductServiceHandler())
 	srv.Serve(lis)
 	fmt.Println("start rpc host: ", 8080)
+	// ctx, cancel := context.WithTimeout(context.Background(), 2*time.Second)
+	// eg, ctx := errgroup.WithContext(ctx)
+
+	// defer cancel()
+	// server, err := buildServer(ctx)
+	// if err != nil {
+	// 	fmt.Println(err)
+	// }
+
+	// eg.Go(func() error {
+	// 	return server.Start(ctx)
+	// })
+	// defer func() {
+	// 	server.Close()
+	// }()
+	// if err := eg.Wait(); err != nil {
+	// 	fmt.Println("Run application")
+	// 	os.Exit(1)
+	// }
+
 }
