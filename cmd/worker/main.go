@@ -2,8 +2,7 @@ package main
 
 import (
 	"fmt"
-
-	"github.com/jasonlvhit/gocron"
+	"time"
 	// worker "github.com/tuancamtbtx/learning-go/app/worker/drop_table"
 )
 
@@ -13,7 +12,9 @@ func Task() {
 
 func main() {
 
-	s := gocron.NewScheduler()
-	s.Every(1).Day().At("10:25").Do(Task)
-	<-s.Start()
+	// s := gocron.NewScheduler()
+	// s.Every(1).Day().At("10:25").Do(Task)
+	// <-s.Start()
+	current_time := time.Now()
+	fmt.Println("Running Time: ", current_time.Format("20060102"))
 }

@@ -21,5 +21,4 @@ build:
 
 
 proto:
-
-	protoc --go_out=plugins=grpc:. proto/entities/user.proto
+	protoc --go_out=plugins=grpc:. proto/entities/test.proto

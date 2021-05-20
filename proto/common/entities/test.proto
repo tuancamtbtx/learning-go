@@ -1,0 +1,18 @@
+syntax= "proto3";
+
+package proto.entities;
+
+option go_package = "genproto/go/common/entities";
+
+message ItemRank {
+    uint64 id = 1;
+    double rank = 2;
+}
+
+message ListRankItems {
+    repeated ItemRank items = 1;
+}
+
+message NestedRankItems {
+    map<string,ListRankItems> items = 1;
+}
